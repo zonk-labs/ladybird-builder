@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
        qt6-tools-dev-tools \
        qt6-multimedia-dev \
        ccache fonts-liberation2 \
+       nasm \
        zip \
        unzip \
        curl \
