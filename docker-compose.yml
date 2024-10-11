@@ -20,7 +20,8 @@ services:
       - /dev/dri:/dev/dri
     user: 1000:1000
     group_add:
-      - 29
+      - audio
+      - sudo
     working_dir: /home/ubuntu/ladybird
     entrypoint: /bin/bash
     tty: true
