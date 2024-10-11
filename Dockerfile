@@ -24,6 +24,7 @@ RUN apt update -y && apt install -y --no-install-recommends \
     qt6-tools-dev-tools \
     qt6-wayland \
     qt6-multimedia-dev \
+    libpulse-dev \
     tar \
     unzip \
     zip \

@@ -9,6 +9,9 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}:/tmp/${WAYLAND_DISPLAY}
       - /run/user/${UID:-1000}/pulse:/run/user/${UID:-1000}/pulse
+      - /dev/dri:/dev/dri
+    device_cgroup_rules:
+      - 'c 226:* rmw' # GPU
     environment:
       - WAYLAND_DISPLAY=${WAYLAND_DISPLAY}
       - XDG_RUNTIME_DIR=/run/user/${UID:-1000}
@@ -16,8 +19,6 @@ services:
       - QT_QPA_PLATFORM=wayland
       - XAUTHORITY=${XAUTHORITY}
       - PULSE_SERVER=unix:/run/user/${UID:-1000}/pulse/native
-    devices:
-      - /dev/dri:/dev/dri
     user: 1000:1000
     group_add:
       - audio
